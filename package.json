@@ -1,25 +1,25 @@
 {
-  "name": "vish-portfolio",
-  "version": "1.0.0",
-  "description": "portfolio of Vishaka Wele Uhulanage",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vishaka-piyumali/portfolio.git"
-  },
-  "keywords": [
-    "Vishaka",
-    "Piyumali",
-    "Wele Uhulanage",
-	"Sydney Web Developer"
-  ],
-  "author": "Vish",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vishaka-piyumali/portfolio/issues"
-  },
-  "homepage": "https://github.com/vishaka-piyumali/portfolio#readme"
+	"name": "vish-portfolio",
+	"version": "1.0.0",
+	"description": "portfolio of Vishaka Wele Uhulanage",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+	"type": "git",
+	"url": "git+https://github.com/vishaka-piyumali/portfolio.git"
+	},
+	"keywords": [
+		"Vishaka",
+		"Piyumali",
+		"Wele Uhulanage",
+		"Sydney Web Developer"
+	],
+	"author": "Vish",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vishaka-piyumali/portfolio/issues"
+	},
+	"homepage": "https://github.com/vishaka-piyumali/portfolio#readme"
 }

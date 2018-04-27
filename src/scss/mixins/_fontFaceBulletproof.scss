@@ -1,0 +1,18 @@
+@mixin fontFaceBulletproof($fontName, $fontUrl, $font-weight, $font-style) {
+	@font-face {
+		font-family: $fontName;
+		src: url($fontUrl +'.eot'); /* IE9 Compat Modes */
+		src: url($fontUrl +'.woff') format('woff'), /* Modern Browsers */
+		url($fontUrl +'.ttf')  format('truetype'), /* Safari, Android, iOS */
+		url($fontUrl +'.svg') format('svg'), /* Legacy iOS */
+		url($fontUrl +'.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */
+		font-weight: $font-weight;
+		font-style: $font-style;
+		-webkit-font-smoothing: subpixel-antialiased;
+		font-smoothing: subpixel-antialiased;
+		text-shadow: 0 0 0 rgba(0,0,0,0);
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+}

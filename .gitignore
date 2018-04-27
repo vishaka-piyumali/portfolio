@@ -1,0 +1,24 @@
+# General folders to ignore
+.idea/
+*.iml
+*.log
+*.orig
+.DS_Store
+.sass-cache
+.settings
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Deps folders
+node_modules/
+node_modules/*
+bower_components
+
+# App folders to ignore
+.jshintrc
+.jscsrc
+public/
+public/*

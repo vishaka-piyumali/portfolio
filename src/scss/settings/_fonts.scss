@@ -1,0 +1,9 @@
+$primary-logo-family: 'v-logo-family';
+$primary-logo-url: '/assets/fonts/vonique-64/Vonique-64-Bold';
+
+$primary-header-family: 'primary-header-family';
+$primary-header-url: '/assets/fonts/cassannet-plus-regular/cassannet_plus_regular-webfont';
+
+@include fontFaceBulletproof($primary-logo-family, $primary-logo-url, bold, normal);
+@include fontFaceBulletproof($primary-header-family, $primary-header-url, bold, normal);
+

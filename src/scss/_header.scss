@@ -1,5 +1,14 @@
 header {
-	background: black;
-	color: white;
+	background: white;
+	color: black;
 	padding: 30px 20px;
+	font-family: 'v-logo-family';
+	h1 {
+		font-size: 2em;
+		margin: 0;
+		display: block;
+		width: max-content;
+		border: 1px solid grey;
+		padding: 20px;
+	}
 }

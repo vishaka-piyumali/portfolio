@@ -6,12 +6,12 @@ const gulp = require('gulp'),
 		babel = require('gulp-babel');
 
 gulp.task('lib-js', function() {
-	return gulp.src('framework/lib/**/*.js') // Get source files with gulp.src
+	return gulp.src('src/framework/lib/**/*.js') // Get source files with gulp.src
 		.pipe(gulp.dest('public/js'))
 });
 
 gulp.task('js', ['lib-js'], function() {
-	return gulp.src('framework/js/**/*.js') // Get source files with gulp.src
+	return gulp.src('src/js/**/*.js') // Get source files with gulp.src
 		.pipe(babel())
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
@@ -20,7 +20,7 @@ gulp.task('js', ['lib-js'], function() {
 });
 
 gulp.task('sass', function() {
-	return gulp.src('framework/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
+	return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
 		.pipe(sass())
 		.pipe(gulp.dest('public/css'))
 		.pipe(browserSync.reload({
@@ -32,8 +32,13 @@ gulp.task('clean', function() {
 	return del.sync('public');
 });
 
+gulp.task('assets', function() {
+	return gulp.src('src/assets/**/*.*') // Get source files with gulp.src
+			.pipe(gulp.dest('public/assets'))
+});
+
 gulp.task('html', function() {
-	return gulp.src('framework/**/*.html') // Get source files with gulp.src
+	return gulp.src('src/**/*.html') // Get source files with gulp.src
 		.pipe(gulp.dest('public/'))
 });
 
@@ -54,12 +59,12 @@ gulp.task('server', function (cb) {
 })
 
 gulp.task('watch', function(){
-	gulp.watch('framework/scss/**/*.scss', ['sass']);
-	gulp.watch('framework/js/**/*.js', ['js']);
-	gulp.watch('framework/**/*.html', ['html']);
+	gulp.watch('src/scss/**/*.scss', ['sass']);
+	gulp.watch('src/js/**/*.js', ['js']);
+	gulp.watch('src/**/*.html', ['html']);
 })
 
 
-gulp.task('start', ['clean', 'sass', 'js', 'html', 'server', 'watch'], function (){
+gulp.task('start', ['clean', 'assets', 'sass', 'js', 'html', 'server', 'watch'], function (){
 	// ...
 })

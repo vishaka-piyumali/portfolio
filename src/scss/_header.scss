@@ -1,15 +1,16 @@
 header {
-	background: white;
-	color: black;
+	background: black;
+	color: white;
 	padding: 30px 20px;
-	font-family: 'v-logo-family';
-	h1 {
+	div.logo {
 		font-size: 2em;
 		margin: 0;
 		display: block;
 		width: max-content;
-		border: 1px solid lightgrey;
+		border: 1px solid whitesmoke;
+		color: whitesmoke;
 		padding: 20px;
+		font-family: 'v-logo-family';
 		letter-spacing: 20px;
 		padding-right: 5px;
 		padding-bottom: 15px;

@@ -3,7 +3,10 @@ const gulp = require('gulp'),
 		del = require('del'),
 		sass = require('gulp-sass'),
 		exec = require('child_process').exec,
-		babel = require('gulp-babel');
+		babel = require('gulp-babel'),
+		debug = require('gulp-debug');
+
+const pmRoot = 'node_modules';
 
 gulp.task('lib-js', function() {
 	return gulp.src('src/framework/lib/**/*.js') // Get source files with gulp.src
@@ -19,7 +22,7 @@ gulp.task('js', ['lib-js'], function() {
 		}))
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', ['foundation'], function() {
 	return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
 		.pipe(sass())
 		.pipe(gulp.dest('public/css'))
@@ -28,12 +31,20 @@ gulp.task('sass', function() {
 		}))
 });
 
+gulp.task('foundation', function() {
+	return gulp.src('src/lib/vendors/css/foundation.6.4.scss')
+		.pipe(sass(
+				{includePaths: ['node_modules/foundation-sites/scss']}
+		))
+		.pipe(gulp.dest('public/vendors/css/'))
+});
+
 gulp.task('clean', function() {
 	return del.sync('public');
 });
 
 gulp.task('assets', function() {
-	return gulp.src('src/assets/**/*.*') // Get source files with gulp.src
+	return gulp.src('./src/assets/**/*.*') // Get source files with gulp.src
 			.pipe(gulp.dest('public/assets'))
 });
 

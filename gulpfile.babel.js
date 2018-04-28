@@ -9,8 +9,8 @@ const gulp = require('gulp'),
 const pmRoot = 'node_modules';
 
 gulp.task('lib-js', function() {
-	return gulp.src('src/framework/lib/**/*.js') // Get source files with gulp.src
-		.pipe(gulp.dest('public/js'))
+	return gulp.src('node_modules/ractive/ractive.js') // Get source files with gulp.src
+		.pipe(gulp.dest('public/vendors/js'))
 });
 
 gulp.task('js', ['lib-js'], function() {

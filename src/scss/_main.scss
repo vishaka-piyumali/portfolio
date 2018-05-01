@@ -1,13 +1,48 @@
 main {
 	> section {
-		font-family: 'primary-callout-font-family';
 		text-align: center;
+		font-family: $secondary-font-family;
 		font-size: 16px;
-		line-height: 35px;
-		padding: 100px 0;
+		line-height:20px;
+
 		&:nth-child(even) {
 			background: #454545;
 			color: white;
 		}
+
+		.grid-container {
+			padding-top: $section-spacing-vertical;
+		}
+
+		p {
+			font-size: 20px;
+			color: #000;
+			text-align: left;
+			margin-left: 20px;
+			letter-spacing: -2px;
+		}
 	}
+	.featured-section {
+		padding-top: $section-spacing-vertical;
+		padding-bottom: $section-spacing-vertical;
+		.grid-container {
+			padding-top: 0;
+		}
+	}
+	.hero-section {
+		font-family: 'primary-callout-font-family';
+		line-height: 35px;
+		p {
+			font-family: 'primary-callout-font-family';
+			font-size: 16px;
+			color: #000;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #2A3745;
+	font-family: $primary-header-family;
 }

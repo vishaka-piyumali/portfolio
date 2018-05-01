@@ -9,7 +9,10 @@ const gulp = require('gulp'),
 const pmRoot = 'node_modules';
 
 gulp.task('lib-js', function() {
-	return gulp.src('node_modules/ractive/ractive.js') // Get source files with gulp.src
+	return gulp.src(['ractive/ractive.js',
+			'jquery/dist/jquery.js',
+			'foundation-sites/dist/js/foundation.min.js'
+		], {cwd: 'node_modules'}) // Get source files with gulp.src
 		.pipe(gulp.dest('public/vendors/js'))
 });
 

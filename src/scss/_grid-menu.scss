@@ -1,0 +1,29 @@
+.menu-grid-open {
+	background: black;
+	color: white;
+	.icon {
+		color: white;
+		&:hover {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
+		}
+	}
+	.close-button {
+		color: $accent-color;
+		&:hover {
+			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
+		}
+	}
+	.menu .menu-item  {
+		text-align: center;
+		a > div {
+			color: white;
+			letter-spacing: 2px;
+			&::after {
+				content: ':';
+				color: $accent-color;
+				font-weight: bold;
+				font-size: 20px;
+			}
+		}
+	}
+}

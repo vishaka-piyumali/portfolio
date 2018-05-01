@@ -7,7 +7,28 @@ $primary-header-url: '/assets/fonts/cassannet-plus-regular/cassannet_plus_regula
 $primary-callout-font-family: 'primary-callout-font-family';
 $primary-callout-font-url: '/assets/fonts/cassannet-plus-regular/cassannet_plus_regular-webfont';
 
+$secondary-font-family: 'secondary-font-family';
+$secondary-font-url: '/assets/fonts/Quicksand-Book/Quicksand-Book';
+
+$foundation-icons: 'foundation-icons';
+$foundation-icons-url: '/assets/fonts/foundation-icons/foundation-icons';
+
+
 @include fontFaceBulletproof($primary-logo-family, $primary-logo-url, bold, normal);
 @include fontFaceBulletproof($primary-header-family, $primary-header-url, bold, normal);
 @include fontFaceBulletproof($primary-callout-font-family, $primary-callout-font-url, bold, normal);
+@include fontFaceBulletproof($secondary-font-family, $secondary-font-url, bold, normal);
+@include fontFaceBulletproof($foundation-icons, $primary-callout-font-url, normal, normal);
+
+@font-face {
+	font-family: "foundation-icons";
+	src: url("../../../assets/fonts/foundation-icons/foundation-icons.eot");
+	src: url("../../../assets/fonts/foundation-icons/foundation-icons.eot?#iefix") format("embedded-opentype"),
+	url("../../../assets/fonts/foundation-icons/foundation-icons.woff") format("woff"),
+	url("../../../assets/fonts/foundation-icons/foundation-icons.ttf") format("truetype"),
+	url("../../../assets/fonts/foundation-icons/foundation-icons.svg#fontcustom") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 

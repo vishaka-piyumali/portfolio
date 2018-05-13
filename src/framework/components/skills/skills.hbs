@@ -1,0 +1,12 @@
+<section style="border: 1px solid grey">
+	<h1>Skills template</h1>
+	<ul class='skills'>
+		{{#each skills}}
+			<li>{{.name}} - {{level}}</li>
+		{{else}}
+			<li>No results yet...</li>
+		{{/each}}
+	</ul>
+	{{message}}
+	{{>content}}
+</section>

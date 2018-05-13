@@ -4,16 +4,18 @@
 	.icon {
 		color: white;
 		&:hover {
+			color: black;
 			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
 		}
 	}
 	.close-button {
 		color: $accent-color;
+		font-size: 30px;
 		&:hover {
 			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
 		}
 	}
-	.menu .menu-item  {
+	.grid-menu .menu-item  {
 		text-align: center;
 		a > div {
 			color: white;

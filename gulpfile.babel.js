@@ -16,7 +16,7 @@ gulp.task('ractive-templates', function() {
 		.pipe(gulpRactive())
 		.pipe(declare({
 			namespace: 'Templates',
-			noRedeclare: true // Avoid duplicate declarations
+			noRedeclare: true
 		}))
 		.pipe(concat('templates.js'))
 		.pipe(gulp.dest('./public/js/'));
@@ -26,12 +26,22 @@ gulp.task('lib-js', function() {
 	return gulp.src(['ractive/ractive.js',
 			'jquery/dist/jquery.js',
 			'foundation-sites/dist/js/foundation.min.js'
-		], {cwd: 'node_modules'}) // Get source files with gulp.src
+		], {cwd: pmRoot}) // Get source files with gulp.src
 		.pipe(gulp.dest('public/vendors/js'))
 });
 
-gulp.task('js', ['lib-js'], function() {
-	return gulp.src('src/framework/**/*.js') // Get source files with gulp.src
+gulp.task('components-js', function() {
+	return gulp.src('src/framework/components/**/*.js') // Get source files with gulp.src
+		.pipe(babel())
+		.pipe(concat('components.js'))
+		.pipe(gulp.dest('public/js'))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+});
+
+gulp.task('js', ['components-js', 'lib-js'], function() {
+	return gulp.src('src/framework/*.js') // Get source files with gulp.src
 		.pipe(babel())
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
@@ -39,8 +49,9 @@ gulp.task('js', ['lib-js'], function() {
 		}))
 });
 
+
 gulp.task('sass', ['foundation'], function() {
-	return gulp.src('src/scss/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
+	return gulp.src('src/scss/**/*.scss')
 		.pipe(sass())
 		.pipe(gulp.dest('public/css'))
 		.pipe(browserSync.reload({
@@ -90,6 +101,7 @@ gulp.task('watch', function(){
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/**/*.html', ['html']);
+	gulp.watch('src/**.*.hbs', ['ractive-templates'])
 })
 
 

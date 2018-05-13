@@ -1,0 +1,43 @@
+.ui-section {
+
+	text-align: center;
+	font-family: $secondary-font-family;
+	font-size: 16px;
+	line-height:20px;
+
+	&:nth-child(even) {
+		background: #454545;
+		color: white;
+	}
+
+	.grid-container {
+		padding-top: $section-spacing-vertical;
+	}
+
+	p {
+		font-size: 20px;
+		color: #000;
+		text-align: left;
+		margin-left: 20px;
+		letter-spacing: -2px;
+	}
+
+	&.featured-section {
+		padding-top: $section-spacing-vertical;
+		padding-bottom: $section-spacing-vertical;
+		.grid-container {
+			padding-top: 0;
+		}
+	}
+	&.hero-section {
+		font-family: 'primary-callout-font-family';
+		line-height: 35px;
+		p {
+			font-family: 'primary-callout-font-family';
+			font-size: 16px;
+			color: #000;
+			text-align: center;
+			letter-spacing: 1px;
+		}
+	}
+}

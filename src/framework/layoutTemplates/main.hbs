@@ -1,19 +1,13 @@
-<section id="about" class="featured-section hero-section">
-	<div class="grid-container">
-		<div class="grid-x grid-margin-x">
-			<div class="cell">
-				<h1>Hello!</h1>
-				<p>
-					I am Vishaka, front end web developer living in Sydney.
-				</p>
-				<p>
-					I am passionate about creating clean, unique and elegant web sites for the best possible user experience.
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="work" style="background: url('/assets/images/web-development-4.jpg'); background-size: cover; height: 500px">
+<ui-section id="about" classList="featured-section hero-section">
+	<h1>Hello!</h1>
+	<p>
+		I am Vishaka, front end web developer living in Sydney.
+	</p>
+	<p>
+		I am passionate about creating clean, unique, responsive, accessible and elegant web sites for better user experience.
+	</p>
+</ui-section>
+<ui-section id="work" style="background: url('/assets/images/web-development-4.jpg'); background-size: cover; height: 500px">
 	<div class="grid-container full">
 		<div class="grid-x">
 			<div class="cell large-6">
@@ -22,6 +16,7 @@
 			</div>
 		</div>
 	</div>
-</section>
-<h4>Skills</h4>
-<skills message="main message"> <div>wrapped content</div></skills>
+</ui-section>
+<ui-section id="about" classList="featured-section hero-section" title="Skills">
+	<ui-skills message="main message"> <div>wrapped content</div></ui-skills>
+</ui-section>

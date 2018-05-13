@@ -1,6 +1,6 @@
-Ractive.components.skills = Ractive.extend({
+Ractive.components['ui-skills'] = Ractive.extend({
 	isolated: false,
-	template: Templates.skills,
+	template: Templates['ui-skills'],
 
 	data: function () {
 		return {

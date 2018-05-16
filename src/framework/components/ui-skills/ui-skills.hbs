@@ -1,12 +1,11 @@
 <div class="ui-skills">
-	<h1>Skills template</h1>
-	<ul class='skills'>
-		{{#each skills}}
-			<li>{{.name}} - {{level}}</li>
-		{{else}}
-			<li>No results yet...</li>
-		{{/each}}
-	</ul>
-	{{message}}
-	{{>content}}
+	{{#skillSet}}
+		<div class="grid-container {{gridContainer}}">
+			<div class="grid-x grid-padding-y">
+				{{#skills:key}}
+					<div class="cell large-auto">{{key}}</div>
+				{{/skills}}
+			</div>
+		</div>
+	{{/skillSet}}
 </div>

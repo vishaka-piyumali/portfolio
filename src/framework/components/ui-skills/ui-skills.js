@@ -4,18 +4,22 @@ Ractive.components['ui-skills'] = Ractive.extend({
 
 	data: function () {
 		return {
-			skills: [{
-				name: 'html5',
-				level: 'excellent'
-			}, {
-				name: 'css3',
-				level: 'excellent'
-			}]
-		};
+			readUrl: '/data/skills.json'
+		}
 	},
 
 	// default data
 	oninit: function () {
 		console.log('skills component init...');
+
+		fetch(this.get('readUrl'))
+		.then(res => res.json())
+		.then(function (data) {
+			this.set('skills', data.skills);
+			this.set('message', 'message from ajax')
+		}.bind(this))
+		.catch(function(error) {
+			console.log(error);
+		});
 	}
 });

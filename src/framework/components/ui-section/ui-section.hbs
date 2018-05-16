@@ -1,7 +1,8 @@
-<section id="{{id}}" class="ui-section {{classList}}">
-	<div class="grid-container">
+<section id="{{id}}" class="ui-section {{classList}}" style="{{style}}">
+	<canvas id="canvas{{id}}"></canvas>
+	<div class="grid-container {{gridContainer}}">
 		<div class="grid-x grid-margin-x">
-			<div class="cell">
+			<div class="cell {{column}}">
 				<h1>{{title}}</h1>
 				{{details}}
 				{{>content}}

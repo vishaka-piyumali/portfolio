@@ -1,4 +1,4 @@
-<ui-section id="about" classList="featured-section hero-section">
+<ui-section id="about" classList="hero-section">
 	<h1>Hello!</h1>
 	<p>
 		I am Vishaka, front end web developer living in Sydney.
@@ -7,16 +7,10 @@
 		I am passionate about creating clean, unique, responsive, accessible and elegant web sites for better user experience.
 	</p>
 </ui-section>
-<ui-section id="work" style="background: url('/assets/images/web-development-4.jpg'); background-size: cover; height: 500px">
-	<div class="grid-container full">
-		<div class="grid-x">
-			<div class="cell large-6">
-				<h2>Need help with your website?</h2>
-				<p>Are you looking for a simple, stylish and functional new website? Look no further. I deliver attractive and functional websites.</p>
-			</div>
-		</div>
-	</div>
+<ui-section id="skills" classList="featured-section" gridContainer="full" title="Skills">
+	<ui-skills></ui-skills>
 </ui-section>
-<ui-section id="about" classList="featured-section hero-section" title="Skills">
-	<ui-skills message="main message"> <div>wrapped content</div></ui-skills>
+<ui-section id="work" style="background: url('/assets/images/web-development-4.jpg'); background-size: cover; height: 500px" gridContainer="full" column="large-6">
+	<h2>Need help with your website?</h2>
+	<p>Are you looking for a simple, stylish and functional new website? Look no further. I deliver attractive and functional websites.</p>
 </ui-section>

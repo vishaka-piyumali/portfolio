@@ -42,11 +42,11 @@ gulp.task('components-js', function() {
 	return gulp.src('src/framework/components/**/*.js') // Get source files with gulp.src
 		.pipe(babel())
 		.pipe(concat('components.js'))
-		.pipe(wrap({
+		/*.pipe(wrap({
 			deps: _.keys(depsParamsMap),
 			params: _.values(depsParamsMap),
 			exports: 'Ractive.components'
-		}))
+		}))*/
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
 			stream: true

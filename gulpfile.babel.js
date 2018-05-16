@@ -7,7 +7,9 @@ const gulp = require('gulp'),
 		debug = require('gulp-debug'),
 		gulpRactive  = require('gulp-ractive'),
 		declare = require('gulp-declare'),
-		concat = require('gulp-concat');
+		concat = require('gulp-concat'),
+		_ = require('lodash-compat'),
+		wrap = require('gulp-wrap-amd');
 
 const pmRoot = 'node_modules';
 
@@ -25,15 +27,26 @@ gulp.task('ractive-templates', function() {
 gulp.task('lib-js', function() {
 	return gulp.src(['ractive/ractive.js',
 			'jquery/dist/jquery.js',
-			'foundation-sites/dist/js/foundation.min.js'
+			'foundation-sites/dist/js/foundation.min.js',
+			'requirejs/require.js'
 		], {cwd: pmRoot}) // Get source files with gulp.src
-		.pipe(gulp.dest('public/vendors/js'))
+		.pipe(gulp.dest('public/js/vendors'))
 });
 
 gulp.task('components-js', function() {
+
+	var depsParamsMap = {
+		'Ractive': 'Ractive',
+		'Templates': 'Templates'};
+
 	return gulp.src('src/framework/components/**/*.js') // Get source files with gulp.src
 		.pipe(babel())
 		.pipe(concat('components.js'))
+		.pipe(wrap({
+			deps: _.keys(depsParamsMap),
+			params: _.values(depsParamsMap),
+			exports: 'Ractive.components'
+		}))
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
 			stream: true
@@ -64,7 +77,7 @@ gulp.task('foundation', function() {
 		.pipe(sass(
 				{includePaths: ['node_modules/foundation-sites/scss']}
 		))
-		.pipe(gulp.dest('public/vendors/css/'))
+		.pipe(gulp.dest('public/css/vendors'))
 });
 
 gulp.task('clean', function() {
@@ -76,6 +89,11 @@ gulp.task('assets', function() {
 			.pipe(gulp.dest('public/assets'))
 });
 
+gulp.task('data', function() {
+	return gulp.src('src/data/*.json') // Get source files with gulp.src
+			.pipe(gulp.dest('public/data'))
+});
+
 gulp.task('html', function() {
 	return gulp.src('src/**/*.html') // Get source files with gulp.src
 		.pipe(gulp.dest('public/'))
@@ -85,9 +103,9 @@ gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
 			baseDir: 'public'
-		},
+		}
 	})
-})
+});
 
 gulp.task('server', function (cb) {
 	exec('node server.js', function (err, stdout, stderr) {
@@ -95,16 +113,16 @@ gulp.task('server', function (cb) {
 		console.log(stderr);
 		cb(err);
 	});
-})
+});
 
 gulp.task('watch', function(){
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/**/*.html', ['html']);
 	gulp.watch('src/**.*.hbs', ['ractive-templates'])
-})
+});
 
 
-gulp.task('start', ['clean', 'assets', 'sass', 'ractive-templates', 'js', 'html', 'server', 'watch'], function (){
+gulp.task('start', ['clean', 'assets', 'data', 'sass', 'ractive-templates', 'js', 'html', 'server', 'watch'], function (){
 	// ...
-})
+});

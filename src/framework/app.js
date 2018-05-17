@@ -2,17 +2,21 @@ requirejs.config({
 	baseUrl: '/js',
 	paths: {
 		Ractive: 'vendors/ractive',
-		jQuery: 'vendors/jquery',
+		jquery: 'vendors/jquery',
 		foundation: 'vendors/foundation.min',
 		Templates: 'templates'
 	},
-	waitSeconds: 0
+	waitSeconds: 40,
+	shim: {
+		foundation: {
+			deps: [
+				'jquery'
+			],
+			exports: 'foundation'
+		}
+	}
 });
 
-require(['vendors/ractive','vendors/jquery', 'vendors/foundation.min', 'core', 'templates', 'components'], function () {
-	console.log('framework loaded');
-});
-
-requirejs(['vendors/jquery', 'vendors/foundation.min'], function() {
+require(['foundation', 'core'], function() {
 	$(document).foundation();
 });

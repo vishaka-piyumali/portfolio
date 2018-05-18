@@ -1,16 +1,16 @@
 .menu-grid-open {
-	background: black;
-	color: white;
+	background: $primary-color;
+	color: $accent-foreground-color;
 	.icon {
-		color: white;
+		color: $accent-foreground-color;
 		&:hover {
-			color: black;
+			color: $primary-color;
 			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
 		}
 	}
 	.close-button {
 		color: $accent-color;
-		font-size: 30px;
+		font-size: $large;
 		&:hover {
 			text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px  $accent-color, 0 0 30px  $accent-color, 0 0 40px  $accent-color, 0 0 50px  $accent-color, 0 0 75px  $accent-color;
 		}
@@ -18,7 +18,7 @@
 	.grid-menu .menu-item  {
 		text-align: center;
 		a > div {
-			color: white;
+			color: $accent-foreground-color;
 			letter-spacing: 2px;
 			&::after {
 				content: ':';

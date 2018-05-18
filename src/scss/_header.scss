@@ -1,14 +1,14 @@
 header {
-	background: black;
-	color: white;
-	padding: 30px 20px;
+	background: $primary-color;
+	color: $accent-foreground-color;
+	padding: $large $medium;
 	border-bottom: 5px solid $accent-color;
 	.logo {
 		font-size: 2em;
 		margin: 0;
 		display: block;
 		width: max-content;
-		border: 1px solid whitesmoke;
+		border: 1px solid $primary-border-color;
 		color: whitesmoke;
 		padding: 20px;
 		font-family: 'v-logo-family';

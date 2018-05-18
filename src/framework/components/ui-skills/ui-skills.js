@@ -4,8 +4,14 @@ Ractive.components['ui-skills'] = Ractive.extend({
 
 	data: function () {
 		return {
-			readUrl: '/data/skills.json'
+			readUrl: '/data/skills.json',
+			skillLevel: function(key) {
+				return constants.skillLevels[key.level] * 200;
+			}
 		}
+	},
+	computed: function () {
+
 	},
 
 	// default data

@@ -25,7 +25,8 @@
 		letter-spacing: -2px;
 	}
 
-	&.featured-section {
+	&.grid-section {
+		padding: 0;
 		h1 {
 			width: fit-content;
 			position: absolute;
@@ -35,6 +36,7 @@
 			padding: 10px;
 		}
 	}
+
 	&.hero-section {
 		font-family: 'primary-callout-font-family';
 		line-height: 35px;

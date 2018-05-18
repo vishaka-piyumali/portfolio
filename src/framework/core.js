@@ -1,4 +1,4 @@
-define(["Ractive", "Templates"], function (Ractive, Templates) {
+define(['Ractive', 'Templates'], function (Ractive, Templates) {
 
 	var app = new Ractive({
 		el: document.querySelector('.application'),

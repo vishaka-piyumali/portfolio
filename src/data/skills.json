@@ -1,25 +1,25 @@
 {
 	"skills": {
 		"html5": {
-			"level": "Excellant"
+			"level": "excellent"
 		},
 		"css3": {
-			"level": "Exceptional"
+			"level": "exceptional"
 		},
 		"vignette": {
-			"level": "very good"
+			"level": "good"
 		},
 		"AEM": {
-			"level": "Intermediate"
+			"level": "intermediate"
 		},
 		"Javascript": {
-			"level": "Excellent"
+			"level": "excellent"
 		},
 		"RactiveJs": {
-			"level": "Excellent"
+			"level": "excellent"
 		},
 		"AngularJs": {
-			"level": "Intermediate"
+			"level": "intermediate"
 		}
 	}
 }

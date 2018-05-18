@@ -17,6 +17,6 @@ requirejs.config({
 	}
 });
 
-require(['foundation', 'core'], function() {
+require(['foundation', 'components', 'core'], function() {
 	$(document).foundation();
 });

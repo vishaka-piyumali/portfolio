@@ -40,7 +40,9 @@ gulp.task('components-js', function() {
 
 	var depsParamsMap = {
 		'Ractive': 'Ractive',
-		'Templates': 'Templates'};
+		'Templates': 'Templates',
+		'constants': 'constants'
+	};
 
 	return gulp.src('src/framework/components/**/*.js') // Get source files with gulp.src
 		.pipe(babel())

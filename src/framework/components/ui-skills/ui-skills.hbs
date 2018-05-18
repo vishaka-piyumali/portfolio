@@ -1,8 +1,14 @@
 <div class="ui-skills">
 		<div class="grid-container {{gridContainer}}">
-			<div class="grid-x grid-padding-y">
+			<div class="grid-x">
 				{{#skills:key}}
-					<div class="cell large-auto">{{key}}</div>
+					<div class="cell large-auto">
+						<div class="item">
+							<div class="bar" style="height: {{skillLevel(.)}}px" ></div>
+							<!--<span class="icon fi- size-48" aria-hidden="true"></span>-->
+							{{key}}
+						</div>
+					</div>
 				{{/skills}}
 			</div>
 		</div>

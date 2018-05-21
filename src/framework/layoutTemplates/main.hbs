@@ -1,5 +1,5 @@
 <ui-section id="about" classList="hero-section">
-	<h1>Hello!</h1>
+	<h1>Hey there!</h1>
 	<p>
 		I am Vishaka, front end web developer living in Sydney.
 	</p>
@@ -7,18 +7,44 @@
 		I am passionate about creating clean, unique, responsive, accessible and elegant web sites for better user experience.
 	</p>
 </ui-section>
-<ui-section id="skills" classList="grid-section" gridContainer="full" title="Skills">
-	<ui-skills></ui-skills>
+<ui-section id="skills"
+			classList="featured-section"
+			gridContainer="full"
+			gridClass="grid-padding-x">
+	<div class="grid-container full">
+		<div class="grid-x grid-margin-x grid-padding-x">
+			<div class="cell large-6">
+				<img src="/assets/images/skills.png" alt="Core skills" />
+			</div>
+			<div class="cell large-6">
+				<ui-skills></ui-skills>
+			</div>
+		</div>
+	</div>
 </ui-section>
 <ui-section id="work"
-			classList="featured-section top-left-theme"
-			style="background: url('/assets/images/woman-coder.jpg') bottom; height: 600px"
+			classList="featured-section"
 			gridContainer="full"
-			gridClass="grid-padding-x"
-			column="large-6"
->
-	<h2>My work</h2>
-	<p>This is the hand-crafted website designed and developed myself. If you are keen to look at the code behind, check it out in the <a href="https://github.com/vishaka-piyumali/portfolio" alt="githib click here to open in a new window" target="_blank">github.</a> </p>
+			gridClass="grid-padding-x">
+	<div class="grid-container {{gridContainer}}">
+		<div class="grid-x grid-margin-x {{gridClass}}">
+			<div class="cell large-4">
+				<h3>Personal portfolio</h3>
+				<p>This is the hand-crafted website designed and developed myself. If you are keen to look at the code behind, check it out in the <a href="https://github.com/vishaka-piyumali/portfolio" alt="githib click here to open in a new window" target="_blank">github.</a> </p>
+			</div>
+			<div class="cell large-4">
+				<h3>Professional work</h3>
+				<p>Please contact me for a detailed resume</p>
+			</div>
+			<div class="cell large-4">
+				<h3>Freelance work</h3>
+				<p>Click here to see few of my work I have done as a freelancer</p>
+			</div>
+		</div>
+	</div>
+</ui-section>
+<ui-section id="skills2" classList="grid-section" gridContainer="full">
+	<ui-skills></ui-skills>
 </ui-section>
 <ui-section id="contact" style="background: url('/assets/images/web-development-4.jpg'); background-size: cover; height: 500px" gridContainer="full" column="large-6">
 	<h2>Need help with your website?</h2>

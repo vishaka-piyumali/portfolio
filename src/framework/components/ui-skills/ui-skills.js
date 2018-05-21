@@ -6,7 +6,7 @@ Ractive.components['ui-skills'] = Ractive.extend({
 		return {
 			readUrl: '/data/skills.json',
 			skillLevel: function(key) {
-				return constants.skillLevels[key.level] * 200;
+				return constants.skillLevels[key.level];
 			}
 		}
 	},

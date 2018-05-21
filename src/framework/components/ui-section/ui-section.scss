@@ -13,8 +13,8 @@
 	}
 
 	&:nth-child(even) {
-		background: #454545;
-		color: white;
+		background: $tertiary-color;
+		color: $primary-color;
 	}
 
 	p {

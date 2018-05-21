@@ -1,23 +1,17 @@
 <div class="ui-skills">
-		<div class="grid-container {{gridContainer}}">
-			<div class="grid-x">
-				<div class="cell large-auto">
-					<ul class="bar-graph">
-						{{#skills:key}}
-							<li class="bar alert" style="width: {{skillLevel(.)}}%;" title="40">
-								<div class="percent">{{skillLevel(.)}}%</div>
-								<div class="description">{{key}}</div>
-							</li>
-						{{/skills}}
-					</ul>
-
+	<h3 class="column-title">Skils</h3>
+	<div class="grid-container {{gridContainer}}">
+		<div class="grid-x">
+			<div class="cell large-auto">
+				<ul class="bar-graph">
 					{{#skills:key}}
-						<div class="item">
-							<label>{{key}}</label>
-							<div class="bar" style="width: {{skillLevel(.)}}px" ></div>
-						</div>
+						<li class="bar alert" style="width: {{skillLevel(.)}}%;" title="40">
+							<div class="percent">{{skillLevel(.)}}%</div>
+							<div class="description">{{key}}</div>
+						</li>
 					{{/skills}}
-				</div>
+				</ul>
 			</div>
 		</div>
+	</div>
 </div>

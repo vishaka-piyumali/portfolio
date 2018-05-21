@@ -1,4 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
 	color: $primary-font-color;
 	font-family: $primary-header-family;
+	&.column-title {
+		text-align: left;
+	}
 }

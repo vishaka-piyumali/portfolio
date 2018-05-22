@@ -18,10 +18,15 @@
 	}
 
 	p {
-		font-size: 20px;
+		font-size: 16px;
 		color: #000;
 		text-align: left;
-		letter-spacing: -2px;
+		letter-spacing: 0px;
+	}
+
+	hr {
+		width: 200px;
+		margin-bottom: 30px;
 	}
 
 	&.grid-section {

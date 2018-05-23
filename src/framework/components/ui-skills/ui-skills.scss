@@ -10,55 +10,43 @@
 
 		.category {
 			border: 1px solid $primary-border-color;
-			background: white;
+			background: $primary-background-color;
 			display: block;
 			position: relative;
 			text-align: left;
 			vertical-align: bottom;
 			margin: $small 0;
-			background: white;
 			transition: background-color 0.5s ease;
 			&:hover {
 				background: $accent-color;
 			}
-		}
 
-		.percent {
-			display: block;
-			position: absolute;
-			right: -80px;
-			width: 70px;
-			opacity: 0.4;
-			font-size: rem-calc(30);
-			position: absolute;
-
-			span {
-				font-size: rem-calc(30);
+			.title {
+				display: block;
+				height: max-content;
+				text-transform: uppercase;
+				font-size: 14px;
+				padding: $small;
+				border-bottom: 1px solid $primary-border-color;
 			}
-		}
 
-		.title {
-			display: block;
-			height: max-content;
-			font-weight: 800;
-			text-transform: uppercase;
-			font-size: 14px;
-			padding: $small;
-			border-bottom: 1px solid $primary-border-color;
-		}
-
-		.skillset {
-			padding: 5px;
-			.skill {
-				opacity: 0.5;
-				padding: 5px;
-				margin-left: 0;
-				border-right: 1px solid $secondary-border-color;
-				&:last-child {
-					border: none;
+			.skillset {
+				padding: $tiny;
+				.skill {
+					@include media("<=tablet") {
+						border: none;
+						display: block;
+					}
+					opacity: 0.5;
+					padding: $tiny;
+					margin-left: 0;
+					border-right: 1px solid $secondary-border-color;
+					&:last-child {
+						border: none;
+					}
 				}
-			}
 
+			}
 		}
 	}
 }

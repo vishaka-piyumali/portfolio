@@ -1,9 +1,10 @@
 requirejs.config({
 	baseUrl: '/js',
 	paths: {
-		Ractive: 'vendors/ractive',
-		jquery: 'vendors/jquery',
-		foundation: 'vendors/foundation.min',
+		Ractive: 'vendors/ractive/ractive',
+		jquery: 'vendors/jquery/dist/jquery',
+		foundation: 'vendors/foundation-sites/dist/js/foundation.min',
+		lodash: 'vendors/lodash-compat/index',
 		Templates: 'templates'
 	},
 	waitSeconds: 40,

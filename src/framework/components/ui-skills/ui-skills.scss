@@ -1,40 +1,26 @@
 .ui-skills {
 
-	margin-top: 75px;
+	margin-top: 50px;
 
-	.bar-graph {
-		padding: 0;
+	.skill-categories {
+
 		width: 100%;
+		padding: 0;
 		margin: 0;
 
-		.bar {
-			border: 1px solid darkgrey;
+		.category {
+			border: 1px solid $primary-border-color;
 			background: white;
 			display: block;
 			position: relative;
 			text-align: left;
 			vertical-align: bottom;
-			height: 30px;
 			margin: $small 0;
 			background: white;
 			transition: background-color 0.5s ease;
 			&:hover {
 				background: $accent-color;
 			}
-		}
-
-		.bar-graph-axis {
-			flex: 1 1 8%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-
-		.bar-graph-label {
-			margin: 0;
-			background-color: none;
-			color: darkgrey;
-			position: relative;
 		}
 
 		.percent {
@@ -51,19 +37,28 @@
 			}
 		}
 
-		.description {
-			width: 100px;
+		.title {
 			display: block;
-			position: absolute;
-			left: 10px;
-			top: 3px;
 			height: max-content;
 			font-weight: 800;
-			opacity: 0.5;
 			text-transform: uppercase;
 			font-size: 14px;
-			font-size: rem-calc(16);
-			overflow: hidden;
+			padding: $small;
+			border-bottom: 1px solid $primary-border-color;
+		}
+
+		.skillset {
+			padding: 5px;
+			.skill {
+				opacity: 0.5;
+				padding: 5px;
+				margin-left: 0;
+				border-right: 1px solid $secondary-border-color;
+				&:last-child {
+					border: none;
+				}
+			}
+
 		}
 	}
 }

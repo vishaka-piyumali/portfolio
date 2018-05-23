@@ -1,3 +1,5 @@
+/** global constants, _ */
+
 Ractive.components['ui-skills'] = Ractive.extend({
 	isolated: false,
 	template: Templates['ui-skills'],
@@ -21,11 +23,18 @@ Ractive.components['ui-skills'] = Ractive.extend({
 		fetch(this.get('readUrl'))
 		.then(res => res.json())
 		.then(function (data) {
-			this.set('skills', data.skills);
-			this.set('message', 'message from ajax')
+			this.set('categories', data.skillCategories);
 		}.bind(this))
 		.catch(function(error) {
 			console.log(error);
+		});
+
+		this.on('*.showSkills', function (srcItem) {
+			_.each(this.get('componentItems'), function (component) {
+				if (component._guid === srcItem._guid) {
+					component.toggle('active');
+				}
+			});
 		});
 	}
 });

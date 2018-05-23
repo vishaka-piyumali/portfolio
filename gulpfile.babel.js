@@ -31,8 +31,9 @@ gulp.task('lib-js', function() {
 	return gulp.src(['ractive/ractive.js',
 			'jquery/dist/jquery.js',
 			'foundation-sites/dist/js/foundation.min.js',
-			'requirejs/require.js'
-		], {cwd: pmRoot}) // Get source files with gulp.src
+			'requirejs/require.js',
+			'lodash-compat/index.js'
+		], {cwd: pmRoot, base: pmRoot})  // Get source files with gulp.src
 		.pipe(gulp.dest('public/js/vendors'))
 });
 
@@ -41,7 +42,8 @@ gulp.task('components-js', function() {
 	var depsParamsMap = {
 		'Ractive': 'Ractive',
 		'Templates': 'Templates',
-		'constants': 'constants'
+		'constants': 'constants',
+		'lodash': '_'
 	};
 
 	return gulp.src('src/framework/components/**/*.js') // Get source files with gulp.src

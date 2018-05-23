@@ -3,13 +3,17 @@
 	<div class="grid-container {{gridContainer}}">
 		<div class="grid-x">
 			<div class="cell large-auto">
-				<ul class="bar-graph">
-					{{#skills:key}}
-						<li class="bar alert" style="width: {{skillLevel(.)}}%;" title="40">
-							<div class="percent">{{skillLevel(.)}}%</div>
-							<div class="description">{{key}}</div>
+				<ul class="skill-categories">
+					{{#categories}}
+						<li class="category" style="width: 100%;" title="40">
+							<div class="title">{{.title}}</div>
+							<div class="skillset">
+								{{#.skills:key}}
+									<span class="skill">{{key}}</span>
+								{{/.skills}}
+							</div>
 						</li>
-					{{/skills}}
+					{{/categories}}
 				</ul>
 			</div>
 		</div>

@@ -1,25 +1,47 @@
 {
-	"skills": {
-		"html5": {
-			"level": "excellent"
-		},
-		"css3": {
-			"level": "exceptional"
-		},
-		"vignette": {
-			"level": "good"
-		},
-		"AEM": {
-			"level": "intermediate"
-		},
-		"Javascript": {
-			"level": "excellent"
-		},
-		"RactiveJs": {
-			"level": "excellent"
-		},
-		"AngularJs": {
-			"level": "intermediate"
+	"skillCategories": [ {
+			"title": "Native Web Deveopment",
+			"skills": {
+				"html": "exceptional",
+				"css3": "exceptional",
+				"Javascript": "excellent"
+			}
+		},{
+			"title": "Content Management Systems",
+			"skills": {
+				"Vignette": "exceptional",
+				"AEM": "intermediate"
+			}
+		},{
+			"title": "JavaScript Frameworks",
+			"skills": {
+				"RactiveJs": "excellent",
+				"BlazeJs": "excellent",
+				"BackboneJs": "excellent",
+				"AngularJs": "intermediate"
+			}
+		}, {
+			"title": "Testing tools",
+			"skills": {
+				"Cucumber": "exceptional",
+				"Jasmine": "exceptional"
+			}
+		}, {
+			"title": "Server Side Scripting",
+			"skills": {
+				"Jsp": "intermediate",
+				"Freemarker": "intermediate",
+				"PHP": "intermediate",
+				"NodeJs": "intermediate",
+				"ExpressJs": "good"
+			}
+		}, {
+			"title": "Continuous Integration",
+			"skills": {
+				"Gulp": "excellent",
+				"Grunt": "intermediate",
+				"Jenkins": "excellent"
+			}
 		}
-	}
+	]
 }

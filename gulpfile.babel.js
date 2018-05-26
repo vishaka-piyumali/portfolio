@@ -9,7 +9,8 @@ const gulp = require('gulp'),
 		declare = require('gulp-declare'),
 		concat = require('gulp-concat'),
 		_ = require('lodash-compat'),
-		wrap = require('gulp-wrap-amd');
+		wrap = require('gulp-wrap-amd'),
+		uglify = require('gulp-uglify');
 
 const pmRoot = 'node_modules';
 
@@ -24,6 +25,7 @@ gulp.task('ractive-templates', function() {
 		.pipe(wrap({
 			exports: 'this.Templates'
 		}))
+		.pipe(uglify())
 		.pipe(gulp.dest('./public/js/'));
 });
 
@@ -34,6 +36,7 @@ gulp.task('lib-js', function() {
 			'requirejs/require.js',
 			'lodash-compat/index.js'
 		], {cwd: pmRoot, base: pmRoot})  // Get source files with gulp.src
+		.pipe(uglify())
 		.pipe(gulp.dest('public/js/vendors'))
 });
 
@@ -54,6 +57,7 @@ gulp.task('components-js', function() {
 			params: _.values(depsParamsMap),
 			exports: 'Ractive.components'
 		}))
+		.pipe(uglify())
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
 			stream: true
@@ -63,6 +67,7 @@ gulp.task('components-js', function() {
 gulp.task('js', ['components-js', 'lib-js'], function() {
 	return gulp.src('src/framework/*.js') // Get source files with gulp.src
 		.pipe(babel())
+		.pipe(uglify())
 		.pipe(gulp.dest('public/js'))
 		.pipe(browserSync.reload({
 			stream: true

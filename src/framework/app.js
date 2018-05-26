@@ -7,6 +7,8 @@ requirejs.config({
 		lodash: 'vendors/lodash-compat/index',
 		Templates: 'templates'
 	},
+	// increasing the default timeout from 7s to 40s for low speed networks
+	waitSeconds: 40,
 	shim: {
 		foundation: {
 			deps: ['jquery'],
@@ -16,7 +18,9 @@ requirejs.config({
 });
 
 require(['foundation'], function () {
-	require(['components', 'core'], function () {
-		$(document).foundation();
+	require(['components'], function () {
+		require(['core'], function () {
+			$(document).foundation();
+		});
 	});
 });

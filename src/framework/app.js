@@ -7,17 +7,16 @@ requirejs.config({
 		lodash: 'vendors/lodash-compat/index',
 		Templates: 'templates'
 	},
-	waitSeconds: 40,
 	shim: {
 		foundation: {
-			deps: [
-				'jquery'
-			],
+			deps: ['jquery'],
 			exports: 'foundation'
 		}
 	}
 });
 
-require(['foundation', 'components', 'core'], function() {
-	$(document).foundation();
+require(['foundation'], function () {
+	require(['components', 'core'], function () {
+		$(document).foundation();
+	});
 });

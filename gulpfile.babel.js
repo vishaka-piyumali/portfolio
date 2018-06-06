@@ -14,6 +14,7 @@ const gulp = require('gulp'),
 
 const pmRoot = 'node_modules';
 
+// concat and minify all component hbs files to templates.js
 gulp.task('ractive-templates', function() {
 	return gulp.src('src/**/*.hbs')
 			.pipe(gulpRactive())
@@ -29,11 +30,13 @@ gulp.task('ractive-templates', function() {
 			.pipe(gulp.dest('./public/js/'));
 });
 
+// copy third party js files
 gulp.task('lib-js', ['npm-js'],  function() {
 	return gulp.src(['src/lib/vendors/js/**/*.js'],{ base: 'src/lib/vendors/js'})
 			.pipe(gulp.dest('public/js/vendors'))
 });
 
+// copy useful npm modules to vendors folder
 gulp.task('npm-js', function() {
 	return gulp.src(['ractive/ractive.js',
 		'jquery/dist/jquery.js',
@@ -45,6 +48,7 @@ gulp.task('npm-js', function() {
 			.pipe(gulp.dest('public/js/vendors'))
 });
 
+// concat and minify component js files to components.js
 gulp.task('components-js', function() {
 
 	var depsParamsMap = {
@@ -141,7 +145,7 @@ gulp.task('server', function (cb) {
 });
 
 gulp.task('watch', function(){
-	gulp.watch('src/scss/**/*.scss', ['sass']);
+	gulp.watch(['src/scss/**/*.scss', 'src/framework/components/**/*.scss'], ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/**/*.html', ['html']);
 	gulp.watch('src/**/*.hbs', ['ractive-templates'])

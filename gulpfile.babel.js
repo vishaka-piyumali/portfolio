@@ -29,13 +29,18 @@ gulp.task('ractive-templates', function() {
 		.pipe(gulp.dest('./public/js/'));
 });
 
-gulp.task('lib-js', function() {
+gulp.task('lib-js', ['npm-js'],  function() {
+	return gulp.src(['src/lib/vendors/js/**/*.js'],{ base: 'src/lib/vendors/js'})
+		.pipe(gulp.dest('public/js/vendors'))
+});
+
+gulp.task('npm-js', function() {
 	return gulp.src(['ractive/ractive.js',
 			'jquery/dist/jquery.js',
 			'foundation-sites/dist/js/foundation.min.js',
 			'requirejs/require.js',
 			'lodash-compat/index.js'
-		], {cwd: pmRoot, base: pmRoot})  // Get source files with gulp.src
+		], {cwd: pmRoot, base: pmRoot})
 		.pipe(uglify())
 		.pipe(gulp.dest('public/js/vendors'))
 });
@@ -75,7 +80,7 @@ gulp.task('js', ['components-js', 'lib-js'], function() {
 });
 
 
-gulp.task('sass', ['foundation'], function() {
+gulp.task('sass', function() {
 	return gulp.src('src/scss/**/*.scss')
 		.pipe(sass())
 		.pipe(gulp.dest('public/css'))
@@ -92,22 +97,30 @@ gulp.task('foundation', function() {
 		.pipe(gulp.dest('public/css/vendors'))
 });
 
+gulp.task('lib-css', function() {
+	return gulp.src(['src/lib/vendors/css/kudos/*.css'])
+			//.pipe(sass())
+			.pipe(gulp.dest('public/css/vendors'))
+});
+
+
+
 gulp.task('clean', function() {
 	return del.sync('public');
 });
 
 gulp.task('assets', function() {
-	return gulp.src('./src/assets/**/*.*') // Get source files with gulp.src
-			.pipe(gulp.dest('public/assets'))
+	return gulp.src('./src/assets/**/*.*')
+		.pipe(gulp.dest('public/assets'))
 });
 
 gulp.task('data', function() {
-	return gulp.src('src/data/*.json') // Get source files with gulp.src
-			.pipe(gulp.dest('public/data'))
+	return gulp.src('src/data/*.json')
+		.pipe(gulp.dest('public/data'))
 });
 
 gulp.task('html', function() {
-	return gulp.src('src/**/*.html') // Get source files with gulp.src
+	return gulp.src('src/**/*.html')
 		.pipe(gulp.dest('public/'))
 });
 
@@ -131,10 +144,10 @@ gulp.task('watch', function(){
 	gulp.watch('src/scss/**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/**/*.html', ['html']);
-	gulp.watch('src/**.*.hbs', ['ractive-templates'])
+	gulp.watch('src/**/*.hbs', ['ractive-templates'])
 });
 
 
-gulp.task('start', ['clean', 'assets', 'data', 'sass', 'ractive-templates', 'js', 'html', 'server', 'watch'], function (){
+gulp.task('default', ['clean', 'assets', 'data', 'lib-css', 'foundation', 'sass', 'ractive-templates', 'js', 'html', 'server', 'watch'], function (){
 	// ...
 });

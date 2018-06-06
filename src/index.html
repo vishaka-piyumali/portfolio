@@ -6,6 +6,7 @@
 	<title>Vish - Frontend Web Developer</title>
 	<link href="css/vendors/foundation.6.4.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/vendors/kudosplease.css" rel="stylesheet">
 </head>
 <body>
 <div class="off-canvas menu-grid-open position-top" id="offCanvas" data-off-canvas>
@@ -35,7 +36,7 @@
 				</a>
 			</div>
 			<div class="cell small-3 menu-item">
-				<a href="#about" class="close-button" data-close>
+				<a href="#footer" class="close-button" data-close>
 					<span class="icon fi-mail size-48"></span>
 					<div>contact</div>
 				</a>
@@ -61,10 +62,11 @@
 
 	</header>
 	<main>
+		<div class="kudos" data-amount="0" data-url="www.itsvish.com"></div>
 		<div class='application'>
 		</div>
 	</main>
-	<footer>
+	<footer id="footer">
 		<div class="social-media">
 			<ul class="menu align-center">
 				<li>
@@ -87,5 +89,19 @@
 	</footer>
 </div>
 <script src="/js/vendors/requirejs/require.js" data-main="js/app"></script>
+<script src="/js/vendors/kudos/kudosplease-min.js" data-main="js/app"></script>
+<script>
+	var kudosPlease = new KudosPlease({
+		el : '.kudos',
+		duration : 1500,
+		persistent : false,
+		status : {
+			alpha : 'fontawesome-star',
+			beta : 'fontawesome-glass',
+			gamma : 'gold'
+		}
+	});
+</script>
+
 </body>
 </html>

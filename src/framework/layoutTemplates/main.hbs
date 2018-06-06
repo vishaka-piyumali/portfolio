@@ -1,49 +1,68 @@
-<ui-section id="about" classList="hero-section">
-	<h1>Hey there!</h1>
-	<p>
-		I am Vishaka, a front end web developer living in Sydney.
-	</p>
-	<p>
-		I am passionate about creating clean, unique, responsive, accessible and elegant web sites for better user experience.
-	</p>
-</ui-section>
-<ui-section id="skills"
-			classList="featured-section"
-			gridContainer="full"
-			gridClass="grid-padding-x">
-	<h3>Technical Skills</h3>
-	<hr>
+<header>
 	<div class="grid-container full">
-		<div class="grid-x grid-padding-x">
-			<div class="cell large-6">
-				<img src="/assets/images/skills.png" alt="Core skills" />
+		<div class="grid-x">
+			<div class="cell small-6">
+				<div class="logo "><em>V</em>ish</div>
 			</div>
-			<div class="cell large-6">
-				<ui-skills></ui-skills>
-			</div>
-		</div>
-	</div>
-</ui-section>
-<ui-section id="work"
-			classList="featured-section"
-			gridContainer="full"
-			gridClass="grid-padding-x">
-	<div class="grid-container {{gridContainer}}">
-		<div class="grid-x {{gridClass}}">
-			<div class="cell large-6">
-				<a href="https://github.com/vishaka-piyumali/portfolio" alt="githib click here to open in a new window" target="_blank">
-					<h3>Personal portfolio</h3>
-					<hr />
-					<p>This is my online portfolio hand-crafted myself using RactiveJs framework. If you are keen to look at the code behind, click here to check it out in the github.</p>
-				</a>
-			</div>
-			<div class="cell large-6">
-				<a href="mailto:vishakapiyumali@gmail.com" alt="click here to send an email">
-					<h3>Professional work</h3>
-					<hr />
-					<p>Web Developer with a JAVA background(SCJP certified) and 8+ years of experience in Commercial Software Industry specialised in HTML, advanced Javascript, CSS and server side scripting technologies. Click here to contact me for a detailed resume.</p>
-				</a>
+			<div class="cell small-6">
+				<button class="menu fi-thumbnails size-48" data-toggle="offCanvas">
+				</button>
 			</div>
 		</div>
 	</div>
-</ui-section>
+</header>
+<main>
+	<ui-section id="about" classList="hero-section">
+		<h1>Hey there!</h1>
+		<p>
+			I am Vishaka, a front end web developer living in Sydney.
+		</p>
+		<p>
+			I am passionate about creating clean, unique, responsive, accessible and elegant web sites for better user experience.
+		</p>
+	</ui-section>
+	<ui-section id="skills"
+				classList="featured-section"
+				gridContainer="full"
+				gridClass="grid-padding-x">
+		<h3>Technical Skills</h3>
+		<hr>
+		<div class="grid-container full">
+			<div class="grid-x grid-padding-x">
+				<div class="cell large-6">
+					<img src="/assets/images/skills.png" alt="Core skills" />
+				</div>
+				<div class="cell large-6">
+					<ui-skills></ui-skills>
+				</div>
+			</div>
+		</div>
+	</ui-section>
+	<ui-section id="work"
+				classList="featured-section"
+				gridContainer="full"
+				gridClass="grid-padding-x">
+		<div class="grid-container {{gridContainer}}">
+			<div class="grid-x {{gridClass}}">
+				<div class="cell large-6">
+					<a href="https://github.com/vishaka-piyumali/portfolio" alt="githib click here to open in a new window" target="_blank">
+						<h3>Personal portfolio</h3>
+						<hr />
+						<p>This is my online portfolio hand-crafted myself using RactiveJs framework. If you are keen to look at the code behind, click here to check it out in the github.</p>
+					</a>
+				</div>
+				<div class="cell large-6">
+					<a href="mailto:vishakapiyumali@gmail.com" alt="click here to send an email">
+						<h3>Professional work</h3>
+						<hr />
+						<p>Web Developer with a JAVA background(SCJP certified) and 8+ years of experience in Commercial Software Industry specialised in HTML, advanced Javascript, CSS and server side scripting technologies. Click here to contact me for a detailed resume.</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</ui-section>
+</main>
+
+<footer id="footer">
+	<ui-social-links></ui-social-links>
+</footer>

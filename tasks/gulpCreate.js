@@ -13,8 +13,8 @@ const inquirer = require('inquirer'),
 				type: 'input',
 				message: 'Component name:\n',
 				validate: function (input) {
-					if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
-					else return 'component name may only include letters, numbers, underscores and hashes.';
+					if (/^ui-([a-z\s\-]+)$/.test(input)) return true;
+					else return 'component name should start with ui- followed by alpha numeric and hyphens';
 				}
 			}
 		],

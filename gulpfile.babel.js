@@ -2,6 +2,7 @@ const gulp = require('gulp'),
 		browserSync = require('browser-sync').create(),
 		del = require('del'),
 		sass = require('gulp-sass'),
+		sassGlob = require('gulp-sass-glob'),
 		exec = require('child_process').exec,
 		babel = require('gulp-babel'),
 		debug = require('gulp-debug'),
@@ -91,7 +92,8 @@ gulp.task('js', ['components-js', 'lib-js'], function() {
 
 
 gulp.task('sass', function() {
-	return gulp.src('src/scss/**/*.scss')
+	return gulp.src(['src/scss/**/*.scss'])
+			.pipe(sassGlob())
 			.pipe(sass())
 			.pipe(gulp.dest('public/css'))
 			.pipe(browserSync.reload({

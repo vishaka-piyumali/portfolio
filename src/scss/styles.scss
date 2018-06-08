@@ -14,7 +14,6 @@
 @import 'main';
 @import 'footer';
 
+// all component css will be imported below
 
-@import "../framework/components/ui-section/ui-section.scss";
-@import "../framework/components/ui-skills/ui-skills.scss";
-@import "../framework/components/ui-social-links/ui-social-links.scss";
+@import "../framework/components/**/*.scss";

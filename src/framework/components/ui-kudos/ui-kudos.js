@@ -12,19 +12,32 @@ Ractive.components['ui-kudos'] = Ractive.extend({
 
 	// default data
 	oninit: function () {
+		this.set('liked', false);
 		this.getKudos();
+		this.getUserStatus();
 		this.on('*.sendKudos', this.sendKudos);
 	},
 
+	// read local storage to see if user already sent kudos
+	getUserStatus: function () {
+		this.set('liked', window.localStorage.getItem("kudos") || false);
+	},
+
 	sendKudos: function () {
-		let url = this.get('writeUrl');
+		var alreadyLiked = this.get('liked');
+		if (alreadyLiked) {
+			return false;
+		}
+		var url = this.get('writeUrl');
 
 		var jqxhr = $.post(url, {
 			pageName: this.get('pageName')
 		})
 		.done(function() {
-			this.set('kudos', _.first(data).kudos)
-		})
+			this.set('liked', true);
+			window.localStorage.setItem("kudos", status);
+			this.getKudos();
+		}.bind(this))
 		.fail(function() {
 			console.log( "error" );
 		})

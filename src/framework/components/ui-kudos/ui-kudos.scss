@@ -8,5 +8,8 @@
 		&:hover {
 			color: $accent-color;
 		}
+		&.liked {
+			color: $secondary-color;
+		}
 	}
 }

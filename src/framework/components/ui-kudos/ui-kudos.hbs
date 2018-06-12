@@ -1,6 +1,6 @@
 <div class="ui-kudos">
-	<a href="#" alt="Kudos for Vish" on-click="sendKudos">
-		<span class="icon fi-like size-48">
+	<a alt="{{liked?"Thank you":"Kudos for this portfolio?"}}" title="{{liked?"Thank you":"Kudos for this portfolio?"}}" on-click="sendKudos">
+		<span class="icon fi-like size-48 {{liked?"liked":""}}">
 		</span>
 	</a>
 	<div>{{kudos}} Kudos</div>

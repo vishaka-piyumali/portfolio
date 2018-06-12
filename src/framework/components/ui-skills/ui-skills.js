@@ -12,29 +12,21 @@ Ractive.components['ui-skills'] = Ractive.extend({
 			}
 		}
 	},
-	computed: function () {
 
+	oninit: function () {
+		this.loadSkillData();
 	},
 
-	// default data
-	oninit: function () {
-		console.log('skills component init...');
-
-		fetch(this.get('readUrl'))
-		.then(res => res.json())
-		.then(function (data) {
+	loadSkillData: function () {
+		var jqxhr = $.get(this.get('readUrl'))
+		.done(function(data) {
 			this.set('categories', data.skillCategories);
 		}.bind(this))
-		.catch(function(error) {
-			console.log(error);
-		});
-
-		this.on('*.showSkills', function (srcItem) {
-			_.each(this.get('componentItems'), function (component) {
-				if (component._guid === srcItem._guid) {
-					component.toggle('active');
-				}
-			});
+		.fail(function() {
+			console.log( "error" );
+		})
+		.always(function() {
+			console.log( "xhr finished" );
 		});
 	}
 });

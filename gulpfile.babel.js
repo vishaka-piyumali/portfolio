@@ -73,7 +73,7 @@ gulp.task('components-js', function() {
 				params: _.values(depsParamsMap),
 				exports: 'Ractive.components'
 			}))
-			.pipe(uglify())
+			//.pipe(uglify())
 			.pipe(gulp.dest('public/js'))
 			.pipe(browserSync.reload({
 				stream: true
@@ -157,6 +157,7 @@ gulp.task('watch', function(){
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/**/*.html', ['html']);
 	gulp.watch('src/**/*.hbs', ['ractive-templates'])
+	gulp.watch('src/framework/components/**/*.js', ['components-js'])
 });
 
 

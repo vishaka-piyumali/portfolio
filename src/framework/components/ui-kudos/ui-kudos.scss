@@ -1,0 +1,12 @@
+.ui-kudos {
+	margin-top: 50px;
+	a {
+		display: block;
+	}
+	.icon {
+		color: $primary-color;
+		&:hover {
+			color: $accent-color;
+		}
+	}
+}

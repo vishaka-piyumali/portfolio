@@ -4,8 +4,8 @@ Ractive.components['ui-kudos'] = Ractive.extend({
 
 	data: function () {
 		return {
-			writeUrl: 'http://www.itsvish.com/sendKudos.php',
-			readUrl: 'http://www.itsvish.com/read.php',
+			writeUrl: '/sendKudos.php',
+			readUrl: '/read.php',
 			pageName: 'itsvish.com:home'
 		}
 	},
@@ -35,7 +35,7 @@ Ractive.components['ui-kudos'] = Ractive.extend({
 		})
 		.done(function() {
 			this.set('liked', true);
-			window.localStorage.setItem("kudos", status);
+			window.localStorage.setItem("kudos", true);
 			this.getKudos();
 		}.bind(this))
 		.fail(function() {
